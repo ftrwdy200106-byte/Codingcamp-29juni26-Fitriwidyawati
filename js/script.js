@@ -46,7 +46,7 @@ document.getElementById('add-task-btn').onclick = () => {
         tasks.push({text: val, completed: false});
         localStorage.setItem('tasks', JSON.stringify(tasks));
         renderTasks();
-    }
+    } else if (val) { alert("Tugas sudah ada!"); }
 };
 window.deleteTask = (i) => { tasks.splice(i, 1); localStorage.setItem('tasks', JSON.stringify(tasks)); renderTasks(); };
 renderTasks();

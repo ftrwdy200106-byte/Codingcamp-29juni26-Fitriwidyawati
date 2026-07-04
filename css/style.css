@@ -1,0 +1,112 @@
+/* Mengatur font dan menghilangkan margin bawaan */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Latar belakang ungu seperti di contoh brief */
+body {
+    background-color: #6c5ce7; 
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Mengatur tata letak (Grid) agar rapi */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Membagi jadi 2 kolom */
+    gap: 20px;
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Desain kotak putih untuk setiap fitur */
+.widget {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Posisi spesifik setiap kotak */
+.greeting-widget { 
+    grid-column: 1 / -1; /* Memanjang penuh di atas */
+    text-align: center; 
+}
+.timer-widget { grid-column: 1 / 2; }
+.links-widget { grid-column: 1 / 2; }
+.todo-widget { grid-column: 2 / 3; grid-row: 2 / 4; } /* Memanjang di kanan */
+
+h1 { font-size: 2.5rem; color: #5a81fa; margin-bottom: 5px; }
+h2 { color: #333; font-size: 1.5rem; }
+h3 { margin-bottom: 15px; font-size: 1.2rem; }
+p { color: #666; margin-bottom: 15px; }
+
+/* Desain Input teks */
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-right: 5px;
+}
+
+/* Desain Tombol */
+button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #5a81fa;
+    color: white;
+    font-weight: bold;
+    transition: 0.2s;
+}
+button:hover { background-color: #4060d0; }
+
+/* Desain spesifik Timer */
+#timer-display {
+    font-size: 3.5rem;
+    color: #5a81fa;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Desain spesifik To-Do List */
+.todo-input-container { display: flex; margin-bottom: 15px; }
+.todo-input-container input { flex-grow: 1; }
+ul { list-style: none; }
+li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+li span { flex-grow: 1; margin-left: 10px; }
+li button { margin-left: 5px; background-color: #ff7675; font-size: 0.8rem; }
+li button:nth-of-type(1) { background-color: #00b894; } /* Tombol edit warna hijau */
+
+/* Desain spesifik Quick Links */
+.link-input-container { display: flex; margin-bottom: 15px; }
+.link-input-container input { width: 40%; }
+.link-input-container button { width: 20%; }
+#links-container div {
+    background: #dfe6e9;
+    padding: 5px 10px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+}
+#links-container a { text-decoration: none; color: #2d3436; font-weight: 500; margin-right: 10px; }
+#links-container button { background: none; color: #d63031; padding: 0; font-size: 1rem; }
+#links-container button:hover { background: none; color: #ff7675; }
